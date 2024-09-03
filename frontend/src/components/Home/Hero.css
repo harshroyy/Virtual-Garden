@@ -1,0 +1,14 @@
+.banner{
+    background-image: url("https://www.banyanbotanicals.com/cdn/shop/files/elevate-with-ayurveda.jpg?v=1715269687&width=1780"); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    min-height: 400px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff; 
+    text-align: center;
+    position: relative;
+}

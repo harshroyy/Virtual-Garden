@@ -1,0 +1,39 @@
+/* Glass effect */
+.glass {
+  width: 300px;
+  height: 300px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 40px 30px rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(24px);
+  cursor: pointer;
+}
+
+/* Navbar CSS */
+.nav-links-hellscript a:hover {
+  color: #34d399; /* Green text color change on hover */
+  text-shadow: 0 0 8px #34d399, 0 0 16px #34d399, 0 0 24px #34d399;
+}
+
+.nav-links-hellscript a::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 0;
+  background: #34d399; /* Green underline */
+  transition: width 0.4s;
+}
+
+.nav-links-hellscript a:hover::after {
+  width: 100%;
+  box-shadow: 0 0 8px #34d399, 0 0 16px #34d399, 0 0 24px #34d399;
+}
+.styler{
+  position: relative;
+  left: 30px;
+}
+
+
+
+
