@@ -1,0 +1,175 @@
+/* General Page Styling */
+.herb-details-container {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    padding: 40px;
+    background-color: #f4faf6;
+    color: #3e4a41;
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh; /* Ensures the container takes full height */
+  }
+  
+  .herb-image-section {
+    position: relative;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .herb-main-image {
+    height: 60vh;
+    border-radius: 20px;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+  }
+  
+  .herb-main-image:hover {
+    transform: scale(1.05); /* Hover effect on the herb image */
+  }
+  
+  .blur-background {
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    background: rgba(0, 200, 100, 0.4);
+    filter: blur(50px);
+    z-index: 0;
+  }
+  
+  /* Herb Info Section */
+  .herb-info-section {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers vertically */
+    align-items: center; /* Centers horizontally */
+    text-align: center; /* Centers the text content */
+    padding: 20px;
+  }
+  
+  .herb-title {
+    font-size: 2.8rem;
+    color: #236736;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+  }
+  
+  .herb-common-names {
+    color: #517d6f;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    font-style: italic;
+  }
+  
+  /* Tab Navigation */
+  .tab-navigation {
+    display: flex;
+    justify-content: center; /* Centers the tabs */
+    margin-top: 20px;
+  }
+  
+  
+  .tab-button {
+    background-color: #eafbf2;
+    color: #236736;
+    font-weight: bold;
+    padding: 10px 20px;
+    margin-right: 10px;
+    border: 2px solid #236736;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .tab-button:hover {
+    background-color: #236736;
+    color: white;
+  }
+  
+  .active-tab {
+    background-color: #236736;
+    color: white;
+  }
+  
+  .tab-content {
+    max-width: 80%; /* Restricts the width of content */
+    margin-top: 20px;
+    min-height: 300px; /* Ensures content doesn't shrink too much */
+  }
+
+  /* Text Styles */
+  .herb-description {
+    font-size: 1.1rem;
+  line-height: 1.6;
+  color: #41594a;
+  background-color: #f1fff7;
+  padding: 15px;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+  text-align: left;
+  }
+  
+  .herb-description:hover {
+    background-color: #f0fff1;
+  }
+  
+  .section-title {
+    font-weight: bold;
+    margin-top: 20px;
+    font-size: 1.3rem;
+    color: #236736;
+  }
+  
+  .herb-uses-list {
+    margin-top: 10px;
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+  
+  .herb-uses-list li {
+    font-size: 1.1rem;
+    color: #465e4f;
+  }
+  
+  .herb-cultivation {
+    font-size: 1.1rem;
+  line-height: 1.6;
+  color: #41594a;
+  background-color: #f1fff7;
+  padding: 15px;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+  text-align: left;
+  }
+  
+  /* Footer Fix */
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  footer {
+    margin-top: auto; /* Ensures footer stays at the bottom */
+  }
+  
+  /* Loader Styling */
+  .loading-screen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #236736;
+  }
+  

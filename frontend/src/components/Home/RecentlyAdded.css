@@ -1,0 +1,49 @@
+/* Recently Added Section */
+.recently-added {
+    background: #f7fdf4; /* Light green background for a fresh look */
+    border-top: 2px solid #e2e8f0; /* Subtle divider to separate sections */
+    padding-top: 3rem; /* Add spacing at the top */
+    padding-bottom: 3rem; /* Add spacing at the bottom */
+    padding-left: 2rem; /* Left padding */
+    padding-right: 2rem; /* Right padding */
+  }
+  
+  /* Title Styling */
+  .recently-added h4 {
+    font-family: 'Poppins', sans-serif; /* Ensures consistent, modern typography */
+    font-weight: 600;
+    color: #2f855a; /* Consistent green tone to unify the design */
+    margin-bottom: 1rem;
+    text-align: center; /* Centers the title */
+  }
+  
+  /* HerbCard Grid Adjustments */
+  .recently-added .grid {
+    gap: 1.5rem; /* Provides breathing space between cards */
+  }
+  
+  /* Herb Card Animations */
+  .recently-added .grid > * {
+    transform: translateY(0);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth effect */
+  }
+  
+  .recently-added .grid > *:hover {
+    transform: translateY(-5px); /* Subtle hover effect */
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1); /* Adds depth */
+  }
+  
+  /* Loader Adjustments */
+  .recently-added .flex {
+    animation: fadeIn 0.5s ease-in-out; /* Adds entrance animation to the loader */
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  

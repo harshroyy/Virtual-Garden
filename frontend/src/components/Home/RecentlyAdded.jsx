@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Loader from "../Loader/Loader";
-import HerbCard from "../BookCard/BookCard"; // Renamed BookCard to HerbCard
+import HerbCard from "../BookCard/BookCard"; // Ensure HerbCard component matches the new Herb design
 
 const RecentlyAdded = () => {
   const [data, setData] = useState([]);
@@ -19,10 +19,16 @@ const RecentlyAdded = () => {
   }, []);
 
   return (
-    <div className="text-green-100 mt-8 px-4 bg-green-100">
-      <h4 className="font-thin text-2xl text-green-900">New Featured Herbs</h4>
-      {!data.length && <div className="flex items-center justify-center my-8"><Loader /></div>}
-      <div className="my-8 grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-4">
+    <div className="recently-added bg-green-50 py-12 px-6 lg:px-16">
+      <h4 className="text-3xl font-semibold text-green-900 text-center mb-6">
+        Popular Herbs
+      </h4>
+      {!data.length && (
+        <div className="flex items-center justify-center my-8">
+          <Loader />
+        </div>
+      )}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
         {data.map((herb, i) => (
           <HerbCard key={i} data={herb} />
         ))}

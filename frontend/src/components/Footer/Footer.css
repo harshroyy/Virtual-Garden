@@ -1,0 +1,21 @@
+/* Footer Container Styling */
+.footer-container {
+    background: rgba(34, 139, 34, 0.9); /* Dark green with transparency */
+    border-top: 1px solid rgba(255, 255, 255, 0.2); /* Light border for separation */
+    color: #e0f7df; /* Soft light green text */
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow above the footer */
+    backdrop-filter: blur(6px); /* Light frosted glass effect */
+}
+
+/* Footer Quote Styling */
+.footer-quote {
+    font-size: 1.25rem; /* Slightly larger text */
+    font-weight: 300; /* Light font for elegance */
+    color: #f0fff4; /* Light green-white color */
+    text-align: center;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+    margin: 0; /* Removing extra spacing */
+    padding: 1rem; /* Padding around the text */
+    max-width: 900px; /* Limiting max width for better readability */
+    line-height: 1.5; /* Improved line spacing */
+}

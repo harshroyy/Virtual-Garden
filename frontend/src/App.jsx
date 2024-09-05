@@ -5,7 +5,6 @@ import Footer from "./components/Footer/Footer";
 import AllBooks from "./pages/AllBooks";  
 import { Routes, Route } from "react-router-dom";
 import ViewBookDetails from "./components/ViewBookDetails/ViewBookDetails";
-import Chatbot from "./components/chat/Chatbot";
 import StreetView from "./pages/StreetView";
 
 function App() {

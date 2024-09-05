@@ -1,0 +1,96 @@
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+.herb-card-container {
+  background-color: white;
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  height: 500px; /* Maintaining consistent height */
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  font-family: 'Poppins', sans-serif; /* Clean and modern font */
+}
+
+.herb-card-container:hover {
+  transform: translateY(-5px);
+  background-color: #f6fff7;
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Image Styling */
+.herb-card-image-container {
+  width: 100%;
+  height: 60%; /* Consistent image height */
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.herb-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+  transition: transform 0.3s ease;
+}
+
+.herb-card-image:hover {
+  transform: scale(1.05);
+}
+
+/* Content Styling */
+.herb-card-content {
+  margin-top: 20px;
+  text-align: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+/* Botanical Name Styling */
+.herb-card-title {
+  font-size: 1.6rem;
+  color: #2c5f2d;
+  font-weight: 700;
+  margin-bottom: 8px;
+  text-transform: capitalize;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Truncated Habitat Text */
+.herb-card-habitat {
+  font-size: 1rem;
+  color: #517d6f;
+  font-weight: 300;
+  white-space: nowrap; /* Keep on one line */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .herb-card-container {
+    padding: 15px;
+    height: auto;
+  }
+
+  .herb-card-title {
+    font-size: 1.4rem;
+  }
+
+  .herb-card-habitat {
+    font-size: 0.9rem;
+  }
+}

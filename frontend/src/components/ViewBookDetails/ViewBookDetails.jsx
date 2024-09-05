@@ -2,11 +2,12 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Loader from "../Loader/Loader";
 import { useParams } from "react-router-dom";
-import { GrLanguage } from "react-icons/gr";
+import "./ViewDataDetails.css"; // Linking the CSS file
 
 const ViewDataDetails = () => {
   const { id } = useParams();
   const [Data, setData] = useState();
+  const [activeTab, setActiveTab] = useState("description");
 
   useEffect(() => {
     const fetch = async () => {
@@ -25,54 +26,80 @@ const ViewDataDetails = () => {
   return (
     <>
       {Data ? (
-        <div className="px-4 md:px-12 py-8 bg-green-50 text-white flex gap-8 flex-col md:flex-row relative">
-          <div className="bg-green-200 rounded p-4 h-[60vh] lg:h-[88vh] w-full lg:w-3/6 flex items-center justify-center relative">
-            <div
-              className="absolute inset-0 rounded-xl z-0"
-              style={{
-                backgroundImage: `url(${Data.image})`,
-                filter: "blur(50px)",
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                opacity: 0.7,
-              }}
-            ></div>
-            <img
-              src={Data.image}
-              alt="Herb"
-              className="h-[50vh] lg:h-[70vh] rounded-xl relative z-10"
-            />
+        <div className="herb-details-container">
+          {/* Herb Image Section */}
+          <div className="herb-image-section">
+            <div className="blur-background"></div>
+            <img src={Data.image} alt="Herb" className="herb-main-image" />
           </div>
-          <div className="p-4 w-full lg:w-3/6">
-            <h1 className="text-4xl text-green-700 font-semibold">
-              {Data.botanicalName}
-            </h1>
-            <p className="text-green-600 mt-1">
-              {Data.commonNames && Object.values(Data.commonNames).join(', ')}
+
+          {/* Herb Details Section */}
+          <div className="herb-info-section">
+            <h1 className="herb-title flex justify-center items-center">{Data.botanicalName}</h1>
+            <p className="herb-common-names">
+              {Data.commonNames && Object.values(Data.commonNames).join(", ")}
             </p>
-            <p className="text-green-600 mt-4 text-xl font-thin">
-              {Data.description}
-            </p>
-            <p className="mt-4 text-green-600 font-semibold">Habitat:</p>
-            <p className="text-green-400 mt-1">{Data.habitat}</p>
-            <p className="mt-4 text-green-600 font-semibold">Medicinal Uses:</p>
-            <ul className="list-disc list-inside text-green-400 mt-1">
-              {Data.medicinalUses && Data.medicinalUses.map((use, index) => (
-                <li key={index}>{use}</li>
-              ))}
-            </ul>
-            <p className="mt-4 text-green-600 font-semibold">Cultivation:</p>
-            <div className="text-green-400 mt-1">
-              <p><strong>Soil:</strong> {Data.cultivation.soil}</p>
-              <p><strong>Climate:</strong> {Data.cultivation.climate}</p>
-              <p><strong>Propagation:</strong> {Data.cultivation.propagation}</p>
-              <p><strong>Watering:</strong> {Data.cultivation.watering}</p>
-              <p><strong>Maintenance:</strong> {Data.cultivation.maintenance}</p>
+
+            {/* Tab Navigation */}
+            <div className="tab-navigation">
+              <button
+                className={`tab-button ${
+                  activeTab === "description" ? "active-tab" : ""
+                }`}
+                onClick={() => setActiveTab("description")}
+              >
+                Description
+              </button>
+              <button
+                className={`tab-button ${
+                  activeTab === "uses" ? "active-tab" : ""
+                }`}
+                onClick={() => setActiveTab("uses")}
+              >
+                Medicinal Uses
+              </button>
+              <button
+                className={`tab-button ${
+                  activeTab === "cultivation" ? "active-tab" : ""
+                }`}
+                onClick={() => setActiveTab("cultivation")}
+              >
+                Cultivation
+              </button>
+            </div>
+
+            {/* Tab Content */}
+            <div className="tab-content">
+              {activeTab === "description" && (
+                <p className="herb-description">{Data.description}</p>
+              )}
+
+              {activeTab === "uses" && (
+                <>
+                  <p className="section-title">Medicinal Uses:</p>
+                  <ul className="herb-uses-list">
+                    {Data.medicinalUses &&
+                      Data.medicinalUses.map((use, index) => (
+                        <li key={index}>{use}</li>
+                      ))}
+                  </ul>
+                </>
+              )}
+
+              {activeTab === "cultivation" && (
+                <div className="herb-cultivation">
+                  <p><strong>Soil:</strong> {Data.cultivation.soil}</p>
+                  <p><strong>Climate:</strong> {Data.cultivation.climate}</p>
+                  <p><strong>Propagation:</strong> {Data.cultivation.propagation}</p>
+                  <p><strong>Watering:</strong> {Data.cultivation.watering}</p>
+                  <p><strong>Maintenance:</strong> {Data.cultivation.maintenance}</p>
+                </div>
+              )}
             </div>
           </div>
         </div>
       ) : (
-        <div className="h-screen bg-green-900 flex items-center justify-center">
+        <div className="loading-screen">
           <Loader />
         </div>
       )}

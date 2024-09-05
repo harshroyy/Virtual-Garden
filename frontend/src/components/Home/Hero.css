@@ -1,14 +1,55 @@
-.banner{
-    background-image: url("https://www.banyanbotanicals.com/cdn/shop/files/elevate-with-ayurveda.jpg?v=1715269687&width=1780"); 
+/* Hero Container */
+.hero-container {
+    height: 100vh;
+    display: flex;
+    background-image: url("https://www.banyanbotanicals.com/cdn/shop/files/elevate-with-ayurveda.jpg?v=1715269687&width=1780");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-color: transparent;
-    min-height: 400px; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff; 
-    text-align: center;
     position: relative;
+}
+
+/* Hero Content Styling */
+.hero-content {
+    margin-left: 2rem; 
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.15); /* Lightened the box background */
+    border-radius: 12px;
+    backdrop-filter: blur(10px); /* Added frosted glass effect */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Soft border */
+}
+
+/* Title Styling */
+.hero-title {
+    color: #f3fce8; 
+    text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Description Styling */
+.hero-description {
+    color: #eef5e4;
+    margin-top: 1rem;
+    max-width: 450px;
+    line-height: 1.6;
+}
+
+/* Explore Button */
+.explore-button {
+    background-color: #22c55e;
+    color: #f0fff4;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Button Hover Effects */
+.explore-button:hover {
+    background-color: #16a34a;
+    border-color: #16a34a;
+    transform: translateY(-3px) scale(1.05); /* Subtle scale and lift effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
 }
